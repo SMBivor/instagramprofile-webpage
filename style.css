@@ -25,6 +25,7 @@ body {
     left: 0;
     top: 0;
     border-right: 1px solid #ddd;
+    transition: width 0.3s ease-in-out;
 }
 
 .insta-logo {
@@ -83,34 +84,11 @@ main {
     flex-direction: column;
 }
 
-
 .profile-top {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.friend-request-btn {
-    width: 35px;
-    height: 35px;
-    border: none;
-    background-color: #f0f0f0; /* Light gray */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.friend-request-btn i {
-    font-size: 18px;
-    color: #000;
-}
-
-.friend-request-btn:hover {
-    background-color: #e0e0e0; /* Darker gray */
-}
-
 
 .verified-icon {
     color: #0095f6;
@@ -224,4 +202,126 @@ main {
 
 .posts-grid img:hover {
     transform: scale(1.05);
+}
+
+/* 🔥 RESPONSIVE DESIGN 🔥 */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    main {
+        margin-left: 220px;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: 10px;
+    }
+
+    .insta-logo {
+        display: none; /* Hide Instagram text logo */
+    }
+
+    nav ul li {
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    nav ul li i {
+        font-size: 20px; /* Only show icons */
+    }
+
+    main {
+        margin-left: 80px;
+        padding: 10px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-info {
+        align-items: center;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .follow-btn, .message-btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .stories {
+        overflow-x: auto;
+        display: flex;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+
+    .story {
+        flex: 0 0 auto;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        display: none; /* Hide sidebar completely on small screens */
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-info {
+        align-items: center;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .stories {
+        overflow-x: auto;
+        display: flex;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+
+    .story {
+        flex: 0 0 auto;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
